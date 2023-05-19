@@ -55,7 +55,13 @@ public class MainActivity extends AppCompatActivity {
     }
     private void startTimer() {
         if (!isRunning) {
-            startTime = System.currentTimeMillis();
+            if (elapsedTime > 0) {
+                // Adjust the startTime by adding the elapsed time
+                startTime = System.currentTimeMillis() - elapsedTime;
+            } else {
+                startTime = System.currentTimeMillis();
+            }
+
             isRunning = true;
 
             final Handler handler = new Handler();
@@ -73,9 +79,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     private void pauseTimer() {
-        isRunning = false;
+        if (isRunning) {
+            isRunning = false;
+            elapsedTime = System.currentTimeMillis() - startTime;
+        }
     }
+
 
     private void updateTimer(long elapsedTime) {
         long seconds = elapsedTime / 1000;
