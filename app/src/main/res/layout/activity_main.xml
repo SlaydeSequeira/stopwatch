@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/timerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:text="00:00:00"
+        android:textSize="50sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/timerTextView"
+        android:gravity="center"
+        android:layout_marginTop="300dp">
+
+        <ImageView
+            android:id="@+id/start"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/baseline_play_arrow_24"
+/>
+
+        <ImageView
+            android:id="@+id/stop"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/baseline_stop_24"
+            android:layout_marginLeft="35dp"
+
+            />
+
+
+        <ImageView
+            android:id="@+id/pause"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/baseline_pause_24"
+            android:layout_marginLeft="35dp"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
